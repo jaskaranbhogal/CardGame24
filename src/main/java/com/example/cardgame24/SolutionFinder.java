@@ -3,6 +3,9 @@ package com.example.cardgame24;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Searches for an expression that combines all four card values to make 24.
+ */
 public class SolutionFinder {
 
     private static final double TARGET = 24.0;
@@ -18,6 +21,10 @@ public class SolutionFinder {
         return search(entries);
     }
 
+    /**
+     * Recursively chooses two current values, combines them with every allowed
+     * operation, and searches the smaller list until one value remains.
+     */
     private String search(List<Entry> entries) {
         if (entries.size() == 1) {
             if (Math.abs(entries.getFirst().value - TARGET) < EPSILON) {
@@ -59,6 +66,10 @@ public class SolutionFinder {
         return null;
     }
 
+    /**
+     * Creates every result for a pair. Subtraction and division are generated
+     * in both orders because those operations are not commutative.
+     */
     private List<Entry> createCombinations(Entry first, Entry second) {
         List<Entry> combinations = new ArrayList<>();
 

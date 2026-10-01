@@ -53,6 +53,11 @@ public class GameController {
         solutionField.clear();
     }
 
+    /**
+     * Validates the user's expression before evaluating it. A valid attempt must
+     * contain only supported arithmetic symbols and use each displayed card value
+     * exactly once.
+     */
     @FXML
     private void handleVerify() {
         String expression = expressionField.getText().trim();
@@ -108,6 +113,10 @@ public class GameController {
         }
     }
 
+    /**
+     * Builds a standard 52-card deck. Face cards use the assignment values
+     * Jack = 11, Queen = 12, King = 13, while Ace = 1.
+     */
     private void createDeck() {
         String[] suits = {"clubs", "diamonds", "hearts", "spades"};
         String[] ranks = {
@@ -126,6 +135,10 @@ public class GameController {
         }
     }
 
+    /**
+     * Shuffles a copy of the deck and displays the first four cards, ensuring
+     * that the same physical card cannot appear twice in one hand.
+     */
     private void dealCards() {
         List<Card> shuffledDeck = new ArrayList<>(deck);
         Collections.shuffle(shuffledDeck);
@@ -139,6 +152,10 @@ public class GameController {
         setCardImage(cardImage4, displayedCards.get(3));
     }
 
+    /**
+     * Compares the numbers typed in the expression with the displayed card
+     * values as sorted lists. This also handles hands containing duplicate ranks.
+     */
     private boolean usesDisplayedValues(String expression) {
         List<Integer> enteredValues = new ArrayList<>();
         Matcher matcher = NUMBER_PATTERN.matcher(expression);

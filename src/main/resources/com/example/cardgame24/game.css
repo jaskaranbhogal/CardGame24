@@ -1,0 +1,72 @@
+.game-root {
+    -fx-background-color: linear-gradient(to bottom right, #17233c, #0f172a);
+    -fx-font-family: "Arial";
+}
+
+.title-label {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.instruction-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #dbe4f3;
+}
+
+.input-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.card-frame {
+    -fx-background-color: white;
+    -fx-background-radius: 9px;
+    -fx-padding: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.35), 12, 0.2, 0, 4);
+}
+
+.text-field {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 8px;
+    -fx-padding: 8px 10px;
+    -fx-font-size: 13px;
+}
+
+.text-field:focused {
+    -fx-border-color: #60a5fa;
+    -fx-border-width: 2px;
+}
+
+.solution-field {
+    -fx-text-fill: #0f172a;
+}
+
+.button {
+    -fx-background-radius: 8px;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 14px;
+    -fx-cursor: hand;
+}
+
+.primary-button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+}
+
+.primary-button:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.secondary-button {
+    -fx-background-color: #e2e8f0;
+    -fx-text-fill: #0f172a;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #cbd5e1;
+}

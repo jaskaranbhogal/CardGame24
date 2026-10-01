@@ -1,5 +1,9 @@
 package com.example.cardgame24;
 
+/**
+ * Evaluates arithmetic expressions with normal operator precedence and
+ * parentheses using a recursive-descent parser.
+ */
 public class ExpressionEvaluator {
 
     private String expression;
@@ -23,6 +27,7 @@ public class ExpressionEvaluator {
         return result;
     }
 
+    // Addition and subtraction have the lowest precedence.
     private double parseExpression() {
         double value = parseTerm();
 
@@ -39,6 +44,7 @@ public class ExpressionEvaluator {
         }
     }
 
+    // Multiplication and division are evaluated before addition and subtraction.
     private double parseTerm() {
         double value = parseFactor();
 
@@ -61,6 +67,7 @@ public class ExpressionEvaluator {
         }
     }
 
+    // A factor is either a whole number or another expression inside parentheses.
     private double parseFactor() {
         skipWhitespace();
 

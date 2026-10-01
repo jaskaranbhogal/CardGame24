@@ -1,5 +1,8 @@
 package com.example.cardgame24;
 
+/**
+ * Represents one physical playing card and the value used by Card Game 24.
+ */
 public class Card {
 
     private final String rank;
