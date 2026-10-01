@@ -1,6 +1,7 @@
 package com.example.cardgame24;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -23,6 +24,12 @@ public class GameController {
     @FXML
     private ImageView cardImage4;
 
+    @FXML
+    private TextField expressionField;
+
+    @FXML
+    private TextField solutionField;
+
     private final List<Card> deck = new ArrayList<>();
     private final List<Card> displayedCards = new ArrayList<>();
 
@@ -30,6 +37,13 @@ public class GameController {
     private void initialize() {
         createDeck();
         dealCards();
+    }
+
+    @FXML
+    private void handleRefresh() {
+        dealCards();
+        expressionField.clear();
+        solutionField.clear();
     }
 
     private void createDeck() {

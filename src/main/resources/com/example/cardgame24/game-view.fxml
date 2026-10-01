@@ -24,10 +24,13 @@
 
     <HBox alignment="CENTER" spacing="12.0">
         <Button text="Find a Solution" prefWidth="130.0"/>
-        <TextField prefWidth="260.0"
+        <TextField fx:id="solutionField"
+                   prefWidth="260.0"
                    editable="false"
                    promptText="Solution appears here"/>
-        <Button text="Refresh" prefWidth="100.0"/>
+        <Button text="Refresh"
+                prefWidth="100.0"
+                onAction="#handleRefresh"/>
     </HBox>
 
     <HBox alignment="CENTER" spacing="18.0">
